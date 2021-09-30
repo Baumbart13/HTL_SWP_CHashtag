@@ -3,7 +3,7 @@
 <br/>
 <p align="center">
   <a href="https://htl-anichstrasse.tirol">
-    <img src=".github/logo.png" alt="Logo" width="80" height="80">
+    <img src=".github/baumi.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Project Name</h3>
@@ -11,34 +11,30 @@
   <p align="center">
     Enter a short description for the project here
     <br/>
-    <a href="https://github.com/htl-anichstrasse/template/releases">Releases</a>
+    <a href="https://github.com/baumbart13/HTL_SWP_Python/releases">Releases</a>
     ·
-    <a href="https://github.com/htl-anichstrasse/template/issues">Report Bug</a>
+    <a href="https://github.com/baumbart13/HTL_SWP_Python/issues">Report Bug</a>
     ·
-    <a href="https://github.com/htl-anichstrasse/template/issues">Request Feature</a>
+    <a href="https://github.com/baumbart13/HTL_SWP_Python/issues">Request Feature</a>
   </p>
 </p>
 
 ## About the project
-Enter a description about the project, its history and its goals here.
+
+This is the C# stuff we do in school.
 
 ## Installation
 
-Enter a step by step explanation for installing this repository on a local machine.
-
 Clone the repository.
 ```
-git clone https://github.com/htl-anichstrasse/template.git
+git clone https://github.com/Baumbart13/HTL_SWP_CHashtag.git
 ```
-
-Step 2 here
 
 ## Contact
 
-If you have any questions about this project, please feel free to contact us.
+If you have any questions about this project, please feel free to contact me.
 
-Student name 1 here - student@tsn.at<br>
-Student name 2 here - student@tsn.at<br>
+Thomas Kefer - tkefer@tsn.at<br>
 HTL Anichstraße - htlinn@tsn.at
 
 <a href="https://htl-anichstrasse.tirol" target="_blank"><img src=".github/htl-anichstrasse-logo.svg" width="200px"></a>
