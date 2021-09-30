@@ -1,4 +1,4 @@
-# Project Name
+# HTL SWP-C#
 
 <br/>
 <p align="center">
@@ -11,11 +11,11 @@
   <p align="center">
     Enter a short description for the project here
     <br/>
-    <a href="https://github.com/baumbart13/HTL_SWP_Python/releases">Releases</a>
+    <a href="https://github.com/baumbart13/HTL_SWP_CHashzag/releases">Releases</a>
     ·
-    <a href="https://github.com/baumbart13/HTL_SWP_Python/issues">Report Bug</a>
+    <a href="https://github.com/baumbart13/HTL_SWP_CHashzag/issues">Report Bug</a>
     ·
-    <a href="https://github.com/baumbart13/HTL_SWP_Python/issues">Request Feature</a>
+    <a href="https://github.com/baumbart13/HTL_SWP_CHashzag/issues">Request Feature</a>
   </p>
 </p>
 
