@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LINQtoObjects", "LINQtoObjects\LINQtoObjects.csproj", "{575A4C72-FC03-4733-99A5-9E04D5E5D8AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ORM_Grundlagen", "ORM_Grundlagen\ORM_Grundlagen.csproj", "{5BADF533-0018-4B98-9668-13E161ACB759}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{575A4C72-FC03-4733-99A5-9E04D5E5D8AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{575A4C72-FC03-4733-99A5-9E04D5E5D8AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{575A4C72-FC03-4733-99A5-9E04D5E5D8AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{575A4C72-FC03-4733-99A5-9E04D5E5D8AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BADF533-0018-4B98-9668-13E161ACB759}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BADF533-0018-4B98-9668-13E161ACB759}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BADF533-0018-4B98-9668-13E161ACB759}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BADF533-0018-4B98-9668-13E161ACB759}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
