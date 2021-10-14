@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using ORM_Grundlagen.db;
@@ -71,6 +72,18 @@ namespace ORM_Grundlagen
                     Console.WriteLine(p);
                 }
 
+                ctx.SaveToDb();
+            }
+
+            // eine Person erzeugen inkl. 2 Adressen und in die DB-TAbllen eintragen
+            var pMaxWithAddress = new Person(0, "Mox", "Neuna", DateTime.UtcNow, 254631m, Gender.Male, 'w');
+            var a1 = new Address(0, "6020", "Innsbruck", "Anichstraße", "12c");
+            var a2 = new Address(0, "6290", "Mayrhofen", "Brandbergstraße", "412");
+            pMaxWithAddress.Addresses = new List<Address>() { a1, a2 };
+
+            using (ctx = new OnlineshopContext())
+            {
+                ctx.People.Add(pMaxWithAddress);
                 ctx.SaveToDb();
             }
         }

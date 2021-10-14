@@ -13,7 +13,8 @@ namespace ORM_Grundlagen.db
         /// Mit diesem Property haben wir Zugriff auf die DB-Tabelle People
         /// </summary>
         public DbSet<Person> People { get; set; }
-        
+        public DbSet<Address> Addresses { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySQL("Server=localhost;database=onlineshop_orm_g1;user=root;password=DuArschloch4");

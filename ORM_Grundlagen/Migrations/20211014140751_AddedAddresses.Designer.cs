@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ORM_Grundlagen.db;
 
 namespace ORM_Grundlagen.Migrations
 {
     [DbContext(typeof(OnlineshopContext))]
-    partial class OnlineshopContextModelSnapshot : ModelSnapshot
+    [Migration("20211014140751_AddedAddresses")]
+    partial class AddedAddresses
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

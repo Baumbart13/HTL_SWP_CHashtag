@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace ORM_Grundlagen.models
 {
@@ -12,6 +13,9 @@ namespace ORM_Grundlagen.models
         public Gender Gender { get; set; }
         private int _Department;
         public char Department { get => (char)_Department; set => _Department = value; }
+        
+        // NAVIGATIONS-PROPERTY für 1:n-Verknüpfung (1-Seite)
+        public List<Address> Addresses { get; set; }
 
         public Person():this(0,"","",DateTime.MinValue,0.0m,new Gender(), '-'){}
 
