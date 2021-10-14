@@ -15,7 +15,7 @@ namespace ORM_Grundlagen
             var p1 = new Person(0, "Thomas", "Kefer", new DateTime(2002, 9, 1), 19999.132m, Gender.Male, 's');
             var p2 = new Person(0, "Torben", "Baumgartner", new DateTime(2003, 9, 1), 20000.132m, Gender.Male, 's');
             var p3 = new Person(0, "Tobias", "Laser", new DateTime(2001, 9, 1), 20001.132m, Gender.Male, 's');
-
+            
 
             // Personen der DB-Tabelle hinzufügen
             using (ctx = new OnlineshopContext())
@@ -79,12 +79,32 @@ namespace ORM_Grundlagen
             var pMaxWithAddress = new Person(0, "Mox", "Neuna", DateTime.UtcNow, 254631m, Gender.Male, 'w');
             var a1 = new Address(0, "6020", "Innsbruck", "Anichstraße", "12c");
             var a2 = new Address(0, "6290", "Mayrhofen", "Brandbergstraße", "412");
-            pMaxWithAddress.Addresses = new List<Address>() { a1, a2 };
+            pMaxWithAddress.Addresses = new List<Address>();
+            pMaxWithAddress.Addresses.Add(a1);
+            pMaxWithAddress.Addresses.Add(a2);
 
             using (ctx = new OnlineshopContext())
             {
                 ctx.People.Add(pMaxWithAddress);
                 ctx.SaveToDb();
+            }
+            
+            // alle Personen inkl aller Addresses ausgeben
+            using (ctx = new OnlineshopContext())
+            {
+                var peopleWithAddresses = from pers in ctx.People.Include(p => p.Addresses) select pers;
+
+                foreach (var p in peopleWithAddresses)
+                {
+                    Console.WriteLine($"\n{p}");
+
+                    if (p.Addresses == null) continue;
+                    
+                    foreach (var a in p.Addresses)
+                    {
+                        Console.WriteLine(a);
+                    }
+                }
             }
         }
     }

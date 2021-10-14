@@ -11,15 +11,14 @@ namespace ORM_Grundlagen.models
         public DateTime Birthdate { get; set; }
         public decimal Salary { get; set; }
         public Gender Gender { get; set; }
-        private int _Department;
-        public char Department { get => (char)_Department; set => _Department = value; }
+        public int Department { get; set; }
         
         // NAVIGATIONS-PROPERTY für 1:n-Verknüpfung (1-Seite)
         public List<Address> Addresses { get; set; }
 
         public Person():this(0,"","",DateTime.MinValue,0.0m,new Gender(), '-'){}
 
-        public Person(int id, string fName, string lName, DateTime bDay, decimal salary, Gender sex, char department)
+        public Person(int id, string fName, string lName, DateTime bDay, decimal salary, Gender sex, int department)
         {
             Id = id;
             FirstName = fName;
@@ -27,7 +26,7 @@ namespace ORM_Grundlagen.models
             Birthdate = bDay;
             Salary = salary;
             this.Gender = sex;
-            _Department = department;
+            Department = department;
         }
 
         public override string ToString()

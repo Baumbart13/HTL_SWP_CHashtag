@@ -54,7 +54,7 @@ namespace ORM_Grundlagen.Migrations
                     b.Property<DateTime>("Birthdate")
                         .HasColumnType("datetime");
 
-                    b.Property<char>("Department")
+                    b.Property<int>("Department")
                         .HasColumnType("int");
 
                     b.Property<string>("FirstName")
