@@ -2,35 +2,22 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ORM_Grundlagen.db;
 
 namespace ORM_Grundlagen.Migrations
 {
     [DbContext(typeof(OnlineshopContext))]
-    partial class OnlineshopContextModelSnapshot : ModelSnapshot
+    [Migration("20211021135004_Fixed an issue")]
+    partial class Fixedanissue
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 64)
                 .HasAnnotation("ProductVersion", "5.0.10");
-
-            modelBuilder.Entity("ArticleInvoice", b =>
-                {
-                    b.Property<int>("ArticlesArticleId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("InvoicesInvoiceId")
-                        .HasColumnType("int");
-
-                    b.HasKey("ArticlesArticleId", "InvoicesInvoiceId");
-
-                    b.HasIndex("InvoicesInvoiceId");
-
-                    b.ToTable("ArticleInvoice");
-                });
 
             modelBuilder.Entity("ORM_Grundlagen.models.Address", b =>
                 {
@@ -69,29 +56,17 @@ namespace ORM_Grundlagen.Migrations
                     b.Property<string>("Articlename")
                         .HasColumnType("text");
 
+                    b.Property<int?>("InvoiceId")
+                        .HasColumnType("int");
+
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18, 2)");
 
                     b.HasKey("ArticleId");
 
+                    b.HasIndex("InvoiceId");
+
                     b.ToTable("Articles");
-                });
-
-            modelBuilder.Entity("ORM_Grundlagen.models.Article2", b =>
-                {
-                    b.Property<int>("Article2Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<string>("Articlename")
-                        .HasColumnType("text");
-
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18, 2)");
-
-                    b.HasKey("Article2Id");
-
-                    b.ToTable("Articles2");
                 });
 
             modelBuilder.Entity("ORM_Grundlagen.models.Invoice", b =>
@@ -106,44 +81,6 @@ namespace ORM_Grundlagen.Migrations
                     b.HasKey("InvoiceId");
 
                     b.ToTable("Invoices");
-                });
-
-            modelBuilder.Entity("ORM_Grundlagen.models.Invoice2", b =>
-                {
-                    b.Property<int>("Invoice2Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime");
-
-                    b.HasKey("Invoice2Id");
-
-                    b.ToTable("Invoices2");
-                });
-
-            modelBuilder.Entity("ORM_Grundlagen.models.Invoices2Articles2", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Article2Id")
-                        .HasColumnType("int");
-
-                    b.Property<decimal>("EndPrice")
-                        .HasColumnType("decimal(18, 2)");
-
-                    b.Property<int?>("Invoice2Id")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("Article2Id");
-
-                    b.HasIndex("Invoice2Id");
-
-                    b.ToTable("Invoices2Articles2s");
                 });
 
             modelBuilder.Entity("ORM_Grundlagen.models.Person", b =>
@@ -175,21 +112,6 @@ namespace ORM_Grundlagen.Migrations
                     b.ToTable("People");
                 });
 
-            modelBuilder.Entity("ArticleInvoice", b =>
-                {
-                    b.HasOne("ORM_Grundlagen.models.Article", null)
-                        .WithMany()
-                        .HasForeignKey("ArticlesArticleId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("ORM_Grundlagen.models.Invoice", null)
-                        .WithMany()
-                        .HasForeignKey("InvoicesInvoiceId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
             modelBuilder.Entity("ORM_Grundlagen.models.Address", b =>
                 {
                     b.HasOne("ORM_Grundlagen.models.Person", "Person")
@@ -199,29 +121,16 @@ namespace ORM_Grundlagen.Migrations
                     b.Navigation("Person");
                 });
 
-            modelBuilder.Entity("ORM_Grundlagen.models.Invoices2Articles2", b =>
+            modelBuilder.Entity("ORM_Grundlagen.models.Article", b =>
                 {
-                    b.HasOne("ORM_Grundlagen.models.Article2", "Article2")
-                        .WithMany("Invoices2Articles2s")
-                        .HasForeignKey("Article2Id");
-
-                    b.HasOne("ORM_Grundlagen.models.Invoice2", "Invoice2")
-                        .WithMany("Invoices2Articles2s")
-                        .HasForeignKey("Invoice2Id");
-
-                    b.Navigation("Article2");
-
-                    b.Navigation("Invoice2");
+                    b.HasOne("ORM_Grundlagen.models.Invoice", null)
+                        .WithMany("Articles")
+                        .HasForeignKey("InvoiceId");
                 });
 
-            modelBuilder.Entity("ORM_Grundlagen.models.Article2", b =>
+            modelBuilder.Entity("ORM_Grundlagen.models.Invoice", b =>
                 {
-                    b.Navigation("Invoices2Articles2s");
-                });
-
-            modelBuilder.Entity("ORM_Grundlagen.models.Invoice2", b =>
-                {
-                    b.Navigation("Invoices2Articles2s");
+                    b.Navigation("Articles");
                 });
 
             modelBuilder.Entity("ORM_Grundlagen.models.Person", b =>

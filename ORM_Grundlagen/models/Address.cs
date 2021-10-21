@@ -9,7 +9,7 @@ namespace ORM_Grundlagen.models
         public string StreetNr { get; set; } = "";
         
         // NAVIGATIONS-PROPERTY für 1:n-Verknüpfung (n-Seite)
-        public Person Person { get; set; } = new Person();
+        public Person Person { get; set; }
 
         public Address(){}
 
