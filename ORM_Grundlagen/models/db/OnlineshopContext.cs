@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using ORM_Grundlagen.db.config;
 using ORM_Grundlagen.models;
 
 namespace ORM_Grundlagen.db
@@ -28,10 +27,11 @@ namespace ORM_Grundlagen.db
             optionsBuilder.UseMySQL("Server=localhost;database=onlineshop_orm_g1;user=root;password=DuArschloch4");
         }
 
+        /*
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new PersonConfiguration());
             modelBuilder.ApplyConfiguration(new AddressConfiguration());
-        }
+        }*/
     }
 }
