@@ -15,7 +15,8 @@ namespace ORM_Grundlagen.db.config
             builder.Property(p => p.LastName).HasColumnName("lastname").HasMaxLength(100).IsRequired();
             builder.Property(p => p.Salary).HasColumnName("salary").IsRequired();
             builder.Property(p => p.Birthdate).HasColumnName("birthdate");
-            builder.Property(p => p.Gender).HasColumnName("gender").IsRequired(false);
+            builder.Property(p => p.Gender).HasColumnName("gender").IsRequired(true);
+            builder.Property(p => p.Department).HasColumnName("department");
         }
     }
 }

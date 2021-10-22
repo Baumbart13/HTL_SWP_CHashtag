@@ -8,7 +8,8 @@ namespace ORM_Grundlagen.db.config
     {
         public void Configure(EntityTypeBuilder<Address> builder)
         {
-            throw new System.NotImplementedException();
+            builder.ToTable("addresses");
+            builder.HasKey(a => a.AddressId);
         }
     }
 }
