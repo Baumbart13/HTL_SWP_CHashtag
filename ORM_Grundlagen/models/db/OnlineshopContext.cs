@@ -24,7 +24,11 @@ namespace ORM_Grundlagen.db
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySQL("Server=localhost;database=onlineshop_orm_g1;user=root;password=DuArschloch4");
+            var server = "localhost";
+            var database = "onlineshop_orm_g1";
+            var user = "root";
+            var password = "DuArschloch4";
+            optionsBuilder.UseMySQL($"Server={server};database={database};user={user};password={password}");
         }
 
         /*
