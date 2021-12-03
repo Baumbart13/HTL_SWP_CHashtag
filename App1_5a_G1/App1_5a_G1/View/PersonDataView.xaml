@@ -22,20 +22,20 @@
                 
                 <Label Text="Person-ID" Grid.Column="0" Grid.Row="0" FontAttributes="Bold"
                        HorizontalTextAlignment="End"/>
-                <Label Text="1621684" Grid.Column="1" Grid.Row="0" FontAttributes="Italic"/>
+                <Label Text="{Binding PersonId}" Grid.Column="1" Grid.Row="0" FontAttributes="Italic"/>
                 
                 <Label Text="Vorname" Grid.Column="0" Grid.Row="1" FontAttributes="Bold"
                        HorizontalTextAlignment="End"/>
-                <Entry Placeholder="Thomas" Grid.Column="1" Grid.Row="1" FontAttributes="Italic"/>
+                <Entry Text="{Binding Firstname}" Placeholder="Thomas" Grid.Column="1" Grid.Row="1" FontAttributes="Italic"/>
                 
 
                 <Label Text="Nachname" Grid.Column="0" Grid.Row="2" FontAttributes="Bold"
                        HorizontalTextAlignment="End"/>
-                <Entry Placeholder="Kefer" Grid.Column="1" Grid.Row="2" FontAttributes="Italic"/>
+                <Entry Text="{Binding Lastname}" Placeholder="Kefer" Grid.Column="1" Grid.Row="2" FontAttributes="Italic"/>
 
                 <Label Text="Geschlecht" Grid.Column="0" Grid.Row="3" FontAttributes="Bold"
                        HorizontalTextAlignment="End"/>
-                <Picker Grid.Column="1" Grid.Row="3" FontAttributes="Italic" SelectedIndex="0">
+                <Picker Grid.Column="1" Grid.Row="3" FontAttributes="Italic" SelectedIndex="0" >
                     <Picker.Items>
                         <x:String>none</x:String>
                         <x:String>male</x:String>
@@ -45,11 +45,11 @@
 
                 <Label Text="Gehalt" Grid.Column="0" Grid.Row="4" FontAttributes="Bold"
                        HorizontalTextAlignment="End"/>
-                <Entry Placeholder="1621684" Grid.Column="1" Grid.Row="4" FontAttributes="Italic"/>
+                <Entry Text="{Binding Salary}" Placeholder="1621684" Grid.Column="1" Grid.Row="4" FontAttributes="Italic"/>
                 
                 <Label Text="Geburtsdatum" Grid.Column="0" Grid.Row="5" FontAttributes="Bold"
                        HorizontalTextAlignment="End"/>
-                <DatePicker Grid.Column="1" Grid.Row="5" FontAttributes="Italic"/>
+                <DatePicker Grid.Column="1" Grid.Row="5" FontAttributes="Italic" Date="{Binding Birthdate}"/>
                 
 
                 <Button Text="yes" Grid.Column="0" Grid.Row="6" IsEnabled="True"
