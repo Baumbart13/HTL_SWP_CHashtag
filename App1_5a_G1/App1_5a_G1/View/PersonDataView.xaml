@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1_5a_G1.View.PersonDataView">
+    <ContentPage.Content>
+        <Frame CornerRadius="50" BorderColor="Blue" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                
+                <Label Text="Person-ID" Grid.Column="0" Grid.Row="0" FontAttributes="Bold"
+                       HorizontalTextAlignment="End"/>
+                <Label Text="1621684" Grid.Column="1" Grid.Row="0" FontAttributes="Italic"/>
+                
+                <Label Text="Vorname" Grid.Column="0" Grid.Row="1" FontAttributes="Bold"
+                       HorizontalTextAlignment="End"/>
+                <Entry Placeholder="Thomas" Grid.Column="1" Grid.Row="1" FontAttributes="Italic"/>
+                
+
+                <Label Text="Nachname" Grid.Column="0" Grid.Row="2" FontAttributes="Bold"
+                       HorizontalTextAlignment="End"/>
+                <Entry Placeholder="Kefer" Grid.Column="1" Grid.Row="2" FontAttributes="Italic"/>
+
+                <Label Text="Geschlecht" Grid.Column="0" Grid.Row="3" FontAttributes="Bold"
+                       HorizontalTextAlignment="End"/>
+                <Picker Grid.Column="1" Grid.Row="3" FontAttributes="Italic" SelectedIndex="0">
+                    <Picker.Items>
+                        <x:String>none</x:String>
+                        <x:String>male</x:String>
+                        <x:String>feMale</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Label Text="Gehalt" Grid.Column="0" Grid.Row="4" FontAttributes="Bold"
+                       HorizontalTextAlignment="End"/>
+                <Entry Placeholder="1621684" Grid.Column="1" Grid.Row="4" FontAttributes="Italic"/>
+                
+                <Label Text="Geburtsdatum" Grid.Column="0" Grid.Row="5" FontAttributes="Bold"
+                       HorizontalTextAlignment="End"/>
+                <DatePicker Grid.Column="1" Grid.Row="5" FontAttributes="Italic"/>
+                
+
+                <Button Text="yes" Grid.Column="0" Grid.Row="6" IsEnabled="True"
+                        TextColor="Red"/>
+                <Button Text="no" Grid.Column="1" Grid.Row="6" IsEnabled="True"
+                        TextColor="Green"/>
+            </Grid>
+        </Frame>
+    </ContentPage.Content>
+</ContentPage>
