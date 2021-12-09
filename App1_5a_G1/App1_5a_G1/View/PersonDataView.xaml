@@ -35,17 +35,13 @@
 
                 <Label Text="Geschlecht" Grid.Column="0" Grid.Row="3" FontAttributes="Bold"
                        HorizontalTextAlignment="End"/>
-                <Picker Grid.Column="1" Grid.Row="3" FontAttributes="Italic" SelectedIndex="0" >
-                    <Picker.Items>
-                        <x:String>none</x:String>
-                        <x:String>male</x:String>
-                        <x:String>feMale</x:String>
-                    </Picker.Items>
+                <Picker Grid.Column="1" Grid.Row="3" FontAttributes="Italic"
+                        ItemsSource="{Binding Sexes}" SelectedItem="{Binding Sex}">
                 </Picker>
 
                 <Label Text="Gehalt" Grid.Column="0" Grid.Row="4" FontAttributes="Bold"
                        HorizontalTextAlignment="End"/>
-                <Entry Text="{Binding Salary}" Placeholder="1621684" Grid.Column="1" Grid.Row="4" FontAttributes="Italic"/>
+                <Entry Text="{Binding Salary}" Placeholder="1621684.22" Grid.Column="1" Grid.Row="4" FontAttributes="Italic"/>
                 
                 <Label Text="Geburtsdatum" Grid.Column="0" Grid.Row="5" FontAttributes="Bold"
                        HorizontalTextAlignment="End"/>

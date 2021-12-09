@@ -1,6 +1,7 @@
 ﻿using App1_5a_G1.Models.Common;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Windows.Input;
 using App1_5a_G1.Models;
@@ -15,7 +16,11 @@ namespace App1_5a_G1.ViewModels {
 		private Sex _sex = Sex.Unknown;
 		private decimal _salary = 0.0m;
 
-		public decimal Salaray
+		private List<Sex> _sexes = Enum.GetValues(typeof(Sex)).Cast<Sex>().ToList();
+		public List<Sex> Sexes => _sexes;
+		
+		
+		public decimal Salary
 		{
 			get { return _salary; }
 			set
