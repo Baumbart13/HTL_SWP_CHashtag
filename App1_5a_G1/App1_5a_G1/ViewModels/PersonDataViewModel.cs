@@ -6,6 +6,7 @@ using System.Text;
 using System.Windows.Input;
 using App1_5a_G1.Models;
 using Xamarin.Forms;
+using System.Diagnostics;
 
 namespace App1_5a_G1.ViewModels {
 	class PersonDataViewModel : Models.Common.BindingBase {
@@ -76,16 +77,12 @@ namespace App1_5a_G1.ViewModels {
 			}
 		}
 
-		public ICommand CmdSavePersonData => new Command(SavePersonData, CanSavePersonData);
+		public ICommand CmdSavePersonData => new Command(SavePersonData);
 		
 		private void SavePersonData() {
 			// Personendaten in der DB abspeichern
-
+			Debug.WriteLine("Saving the persondata");
 			return;
-		}
-
-		private bool CanSavePersonData() {
-			return true;
 		}
 	}
 }

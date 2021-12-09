@@ -46,10 +46,9 @@
                 <Label Text="Geburtsdatum" Grid.Column="0" Grid.Row="5" FontAttributes="Bold"
                        HorizontalTextAlignment="End"/>
                 <DatePicker Grid.Column="1" Grid.Row="5" FontAttributes="Italic" Date="{Binding Birthdate}"/>
-                
 
                 <Button Text="yes" Grid.Column="0" Grid.Row="6" IsEnabled="True"
-                        TextColor="Red"/>
+                        TextColor="Red" Command="{Binding CmdSavePersonData}"/>
                 <Button Text="no" Grid.Column="1" Grid.Row="6" IsEnabled="True"
                         TextColor="Green"/>
             </Grid>
