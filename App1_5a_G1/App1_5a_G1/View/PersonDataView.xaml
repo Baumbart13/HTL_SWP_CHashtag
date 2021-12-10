@@ -19,6 +19,7 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="3*"/>
+                    <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
@@ -59,7 +60,7 @@
                 <Button Text="no" Grid.Column="1" Grid.Row="6" IsEnabled="True"
                         TextColor="Green" Command="{Binding CmdAbortPersonData}"/>
 
-                <Button Text="Print Person" Grid.ColumnSpan="2" Grid.Row="6" IsEnabled="True"
+                <Button Text="Print Person" Grid.ColumnSpan="2" Grid.Row="7" IsEnabled="True"
                         TextColor="Blue" Command="{Binding CmdPrintPersonData}"/>
             </Grid>
         </Frame>

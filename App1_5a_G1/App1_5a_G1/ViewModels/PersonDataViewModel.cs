@@ -10,6 +10,8 @@ using System.Diagnostics;
 
 namespace App1_5a_G1.ViewModels {
 	class PersonDataViewModel : Models.Common.BindingBase {
+		private static NLog.Logger _logger = NLog.LogManager.GetCurrentClassLogger();
+
 		private int _personId = 0;
 		private string _firstname = "";
 		private string _lastname = "";
@@ -27,6 +29,7 @@ namespace App1_5a_G1.ViewModels {
 			set
 			{
 				_salary = value;
+				_logger.Debug($"{nameof(Salary)} changed");
 				RaisePropertyChanged(nameof(_salary));
 			}
 		}
@@ -37,6 +40,7 @@ namespace App1_5a_G1.ViewModels {
 			set
 			{
 				this._personId = value;
+				_logger.Debug($"{nameof(PersonId)} changed");
 				this.RaisePropertyChanged(nameof(PersonId));
 			}
 		}
@@ -45,6 +49,7 @@ namespace App1_5a_G1.ViewModels {
 			get { return this._firstname; }
 			set {
 				this._firstname = value;
+				_logger.Debug($"{nameof(Firstname)} changed");
 				this.RaisePropertyChanged(nameof(Firstname));
 			}
 		}
@@ -55,6 +60,7 @@ namespace App1_5a_G1.ViewModels {
 			set
 			{
 				_lastname = value;
+				_logger.Debug($"{nameof(Lastname)} changed");
 				RaisePropertyChanged(nameof(_lastname));
 			}
 		}
@@ -65,6 +71,7 @@ namespace App1_5a_G1.ViewModels {
 			set
 			{
 				_sex = value;
+				_logger.Debug($"{ nameof(Sex)} changed");
 				RaisePropertyChanged(nameof(_sex));
 			}
 		}
@@ -73,12 +80,13 @@ namespace App1_5a_G1.ViewModels {
 			get { return this._birthdate; }
 			set {
 				this._birthdate = value;
+				_logger.Debug($"{nameof(Birthdate)} changed");
 				this.RaisePropertyChanged(nameof(Birthdate));
 			}
 		}
 
 		public ICommand CmdPrintPersonData => new Command(e => {
-			Debug.WriteLine($"_personId = {_personId}\n" +
+			_logger.Debug($"_personId = {_personId}\n" +
 				$"_firstname = {_firstname}\n" +
 				$"_lastname = {_lastname}\n" +
 				$"_birthdate = {_birthdate}\n" +
@@ -95,14 +103,14 @@ namespace App1_5a_G1.ViewModels {
 			Sex = Sex.Unknown;
 			Birthdate = DateTime.Now;
 
-			Debug.WriteLine("Resetted the persondata");
+			_logger.Debug("Resetted the persondata");
 		});
 
 		public ICommand CmdSavePersonData => new Command(SavePersonData);
 		
 		private void SavePersonData() {
 			// Personendaten in der DB abspeichern
-			Debug.WriteLine("Saving the persondata");
+			_logger.Debug("Saving the persondata");
 			return;
 		}
 	}
