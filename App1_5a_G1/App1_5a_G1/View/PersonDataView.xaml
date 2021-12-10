@@ -1,7 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App1_5a_G1.View.PersonDataView">
+             x:Class="App1_5a_G1.View.PersonDataView"
+             xmlns:converter="clr-namespace:App1_5a_G1.Converters">
+    <ContentPage.Resources>
+        <!-- TODO: Unused Gender Converter
+        <converter:GenderToIntConverter x:Key="GenderToIntConv"/>
+        -->
+    </ContentPage.Resources>
     <ContentPage.Content>
         <Frame CornerRadius="50" BorderColor="Blue" Margin="20">
             <Grid>
@@ -37,6 +43,7 @@
                        HorizontalTextAlignment="End"/>
                 <Picker Grid.Column="1" Grid.Row="3" FontAttributes="Italic"
                         ItemsSource="{Binding Sexes}" SelectedItem="{Binding Sex}">
+                    <!-- TODO: Unused Gender Converter SelectedItem="{Binding Sex, Converter={StaticResource GenderToIntConv}}" -->
                 </Picker>
 
                 <Label Text="Gehalt" Grid.Column="0" Grid.Row="4" FontAttributes="Bold"
@@ -50,7 +57,10 @@
                 <Button Text="yes" Grid.Column="0" Grid.Row="6" IsEnabled="True"
                         TextColor="Red" Command="{Binding CmdSavePersonData}"/>
                 <Button Text="no" Grid.Column="1" Grid.Row="6" IsEnabled="True"
-                        TextColor="Green"/>
+                        TextColor="Green" Command="{Binding CmdAbortPersonData}"/>
+
+                <Button Text="Print Person" Grid.ColumnSpan="2" Grid.Row="6" IsEnabled="True"
+                        TextColor="Blue" Command="{Binding CmdPrintPersonData}"/>
             </Grid>
         </Frame>
     </ContentPage.Content>

@@ -77,6 +77,27 @@ namespace App1_5a_G1.ViewModels {
 			}
 		}
 
+		public ICommand CmdPrintPersonData => new Command(e => {
+			Debug.WriteLine($"_personId = {_personId}\n" +
+				$"_firstname = {_firstname}\n" +
+				$"_lastname = {_lastname}\n" +
+				$"_birthdate = {_birthdate}\n" +
+				$"_sex = {_sex}\n" +
+				$"_salary = {_salary}");
+		});
+
+		public ICommand CmdAbortPersonData => new Command(e => {
+			// Reset all data to default
+			Salary = 0.0m;
+			PersonId = 0;
+			Firstname = "";
+			Lastname = "";
+			Sex = Sex.Unknown;
+			Birthdate = DateTime.Now;
+
+			Debug.WriteLine("Resetted the persondata");
+		});
+
 		public ICommand CmdSavePersonData => new Command(SavePersonData);
 		
 		private void SavePersonData() {
