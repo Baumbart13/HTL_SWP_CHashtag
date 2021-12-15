@@ -6,7 +6,7 @@
     <img src=".github/baumi.jpg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Project Name</h3>
+  <h3 align="center">HTL SWP C#</h3>
 
   <p align="center">
     Enter a short description for the project here
