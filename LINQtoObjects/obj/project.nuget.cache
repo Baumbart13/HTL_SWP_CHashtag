@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "5wNvmkZCVrHGB+M8LZLyKxU/QCBdRsKXPipIU7BrLhiUh672S4e/6RRhi+FjuU6dkug3ffrbM38MJiuNRu8qYg==",
+  "dgSpecHash": "VCEPDz2je4GiwLtyDVDwHqdJ+5rmGHVxURtm2+4FQ4iwQU6G4e0ZK8FVswsQ2CzgfeF2cwGk+jlaJHgjrqcHyQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Baumbart13\\RiderProjects\\HTL_SWP_CHashtag\\LINQtoObjects\\LINQtoObjects.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Thomas\\Paras\\HTL_SWP_CHashtag\\LINQtoObjects\\LINQtoObjects.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Thomas\\.nuget\\packages\\microsoft.netcore.app.ref\\5.0.0\\microsoft.netcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Thomas\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\5.0.0\\microsoft.windowsdesktop.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Thomas\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\5.0.0\\microsoft.aspnetcore.app.ref.5.0.0.nupkg.sha512",
+    "C:\\Users\\Thomas\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.15\\microsoft.netcore.app.host.win-x64.5.0.15.nupkg.sha512"
+  ],
   "logs": []
 }
